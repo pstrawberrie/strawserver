@@ -6,13 +6,15 @@ import React from 'react';
 import io from 'socket.io-client';
 
 import Nav from '../Nav/Nav';
+import Chat from '../Chat/Chat';
 
 export default class IndexPage extends React.Component {
   /**
    * State
    */
   state = {
-    serverStatus: {},
+    status: {},
+    chat: {},
   }
 
   /**
@@ -21,6 +23,14 @@ export default class IndexPage extends React.Component {
   componentDidMount() {
     this.handleSockets();
   }
+
+  /**
+   * Update Chat
+   */
+  updateChat(data) {
+    console.log('updateChat in IndexPage:', data);
+  }
+
 
   /**
    * Handle Websockerts
@@ -42,7 +52,7 @@ export default class IndexPage extends React.Component {
       <>
         <Nav serverStatus={this.state.serverStatus} />
         <main id="main-content">
-
+          <Chat data={this.state.serverChat} />
         </main>
       </>
     );
