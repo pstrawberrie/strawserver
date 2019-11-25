@@ -31802,12 +31802,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/Nav/Nav.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parseuri/index.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../node_modules/parseuri/index.js":[function(require,module,exports) {
 /**
  * Parses an URI
  *
@@ -41475,7 +41470,12 @@ exports.connect = lookup;
 exports.Manager = require('./manager');
 exports.Socket = require('./socket');
 
-},{"./url":"../node_modules/socket.io-client/lib/url.js","socket.io-parser":"../node_modules/socket.io-client/node_modules/socket.io-parser/index.js","./manager":"../node_modules/socket.io-client/lib/manager.js","debug":"../node_modules/socket.io-client/node_modules/debug/src/browser.js","./socket":"../node_modules/socket.io-client/lib/socket.js"}],"components/Nav/Nav.js":[function(require,module,exports) {
+},{"./url":"../node_modules/socket.io-client/lib/url.js","socket.io-parser":"../node_modules/socket.io-client/node_modules/socket.io-parser/index.js","./manager":"../node_modules/socket.io-client/lib/manager.js","debug":"../node_modules/socket.io-client/node_modules/debug/src/browser.js","./socket":"../node_modules/socket.io-client/lib/socket.js"}],"components/Nav/Nav.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Nav/Nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41487,7 +41487,73 @@ var _react = _interopRequireDefault(require("react"));
 
 require("./Nav.scss");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Nav =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Nav, _React$Component);
+
+  function Nav() {
+    _classCallCheck(this, Nav);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Nav).apply(this, arguments));
+  }
+
+  _createClass(Nav, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("ul", {
+        className: "nav__main"
+      }, _react.default.createElement("li", null, _react.default.createElement("a", {
+        className: "nav__main_link",
+        href: "#testlink"
+      }, "Test Link")), _react.default.createElement("li", null, _react.default.createElement("a", {
+        className: "nav__main_link",
+        href: "#testlink2"
+      }, "Test Link 2"))), _react.default.createElement("div", {
+        className: "nav__user"
+      }, _react.default.createElement("button", {
+        className: "nav__user_trigger"
+      }, "User")));
+    }
+  }]);
+
+  return Nav;
+}(_react.default.Component);
+
+exports.default = Nav;
+},{"react":"../node_modules/react/index.js","./Nav.scss":"components/Nav/Nav.scss"}],"components/IndexPage/IndexPage.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
 var _socket = _interopRequireDefault(require("socket.io-client"));
+
+var _Nav = _interopRequireDefault(require("../Nav/Nav"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41511,40 +41577,32 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Nav =
+var IndexPage =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Nav, _React$Component);
+  _inherits(IndexPage, _React$Component);
 
-  function Nav() {
+  function IndexPage() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, Nav);
+    _classCallCheck(this, IndexPage);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Nav)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(IndexPage)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      user: {},
-      links: [{
-        title: 'Home',
-        url: '/'
-      }, {
-        title: 'Error',
-        url: '/errorpageidontexist'
-      }],
       serverStatus: {}
     });
 
     return _this;
   }
 
-  _createClass(Nav, [{
+  _createClass(IndexPage, [{
     key: "componentDidMount",
 
     /**
@@ -41554,7 +41612,7 @@ function (_React$Component) {
       this.handleSockets();
     }
     /**
-     * Handle Sockets
+     * Handle Websockerts
      */
 
   }, {
@@ -41570,37 +41628,22 @@ function (_React$Component) {
         console.log('Got serverStatus socket from server:', data);
       });
     }
-    /**
-     * Render
-     */
-
   }, {
     key: "render",
     value: function render() {
-      var name = this.state.user.name || 'User';
-      var links = this.state.links.map(function (link, index) {
-        return _react.default.createElement("li", {
-          key: index
-        }, _react.default.createElement("a", {
-          className: "nav__main_link",
-          href: link.url
-        }, link.title));
-      });
-      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("ul", {
-        className: "nav__main"
-      }, links), _react.default.createElement("div", {
-        className: "nav__user"
-      }, _react.default.createElement("button", {
-        className: "nav__user_trigger"
-      }, name)));
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Nav.default, {
+        serverStatus: this.state.serverStatus
+      }), _react.default.createElement("main", {
+        id: "main-content"
+      }));
     }
   }]);
 
-  return Nav;
+  return IndexPage;
 }(_react.default.Component);
 
-exports.default = Nav;
-},{"react":"../node_modules/react/index.js","./Nav.scss":"components/Nav/Nav.scss","socket.io-client":"../node_modules/socket.io-client/lib/index.js"}],"client.js":[function(require,module,exports) {
+exports.default = IndexPage;
+},{"react":"../node_modules/react/index.js","socket.io-client":"../node_modules/socket.io-client/lib/index.js","../Nav/Nav":"components/Nav/Nav.js"}],"client.js":[function(require,module,exports) {
 "use strict";
 
 require("./client.scss");
@@ -41609,7 +41652,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _Nav = _interopRequireDefault(require("./components/Nav/Nav"));
+var _IndexPage = _interopRequireDefault(require("./components/IndexPage/IndexPage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41618,9 +41661,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 // Render React Components
 document.addEventListener('DOMContentLoaded', function () {
-  _reactDom.default.render(_react.default.createElement(_Nav.default, null), document.getElementById('nav'));
+  _reactDom.default.render(_react.default.createElement(_IndexPage.default, null), document.getElementById('index-root'));
 });
-},{"./client.scss":"client.scss","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Nav/Nav":"components/Nav/Nav.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./client.scss":"client.scss","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/IndexPage/IndexPage":"components/IndexPage/IndexPage.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -41648,7 +41691,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57604" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62731" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

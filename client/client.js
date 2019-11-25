@@ -4,12 +4,12 @@
 import './client.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './components/Nav/Nav';
+import IndexPage from './components/IndexPage/IndexPage';
 
 // Render React Components
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Nav/>,
-    document.getElementById('nav')
+    <IndexPage />,
+    document.getElementById('index-root')
   );
 });

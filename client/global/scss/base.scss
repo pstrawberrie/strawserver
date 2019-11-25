@@ -11,3 +11,27 @@
 // Functions + Mixins
 @import './functions/index';
 @import './mixins/index';
+
+// Type
+@import './type/index';
+
+// Themes
+@import './themes/index';
+
+// Base Styling
+body, html {
+  width: 100%;
+  height: 100%;
+}
+html { font-size: 16px; }
+body {
+  font-size: 100%;
+  @include ff-kanit;
+}
+
+a,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}

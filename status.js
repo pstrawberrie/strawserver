@@ -8,7 +8,7 @@ const momentDurationFormatSetup = require("moment-duration-format");
 momentDurationFormatSetup(moment);
 
 function formatUptime(seconds) {
-    return moment.duration(seconds * 2, 'seconds').format("d[days] h[hr] m[min]");
+    return moment.duration(seconds, 'seconds').format("d[days] h[hr] m[min]");
 }
 
 function formatBytes(bytes, decimals = 2) {

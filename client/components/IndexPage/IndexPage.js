@@ -7,7 +7,7 @@ import io from 'socket.io-client';
 
 import Nav from '../Nav/Nav';
 
-class IndexParent extends React.Component {
+export default class IndexPage extends React.Component {
   /**
    * State
    */
