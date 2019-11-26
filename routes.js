@@ -6,13 +6,14 @@ const express = require('express');
 const router = express.Router();
 
 /**
- * Require Controllers
+ * Require Handlers & Controllers
  */
- const indexController = require('./controllers/indexController');
+const { catchErrors } = require('./handlers/errorHandlers');
+const indexController = require('./controllers/indexController');
 
  /**
   * Index Routing
   */
- router.get('/', indexController.index);
+ router.get('/', catchErrors(indexController.index));
 
 module.exports = router;
