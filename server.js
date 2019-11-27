@@ -56,9 +56,9 @@ server.listen(config.webPort, () => {
         console.log(chalk.gray('-> Client Connected to Webserver Socket'));
 
         // Server Status Sockets
-        socket.on('serverStatus', (data) => {
-            console.log(chalk.gray(`-> Webserver Received serverStatus socket`));
-            socket.emit('serverStatus', status());
+        socket.on('servers', (data) => {
+            console.log(chalk.gray(`-> Webserver Received 'servers' socket`));
+            socket.emit('servers', status());
         });
     });
 

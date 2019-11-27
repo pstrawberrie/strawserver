@@ -1,0 +1,32 @@
+/**
+ * Server Status
+ */
+
+.servers {
+
+  // Server Quickview (Nav Bar)
+  &__nav-quickview {
+    position: relative;
+    display: flex;
+
+    &_icon {
+      position: relative;
+      display: flex;
+      border: 2px solid transparent;
+
+      &.up {
+        border-color: #0f0;//@TODO: Green variable color
+      }
+
+      &.down {
+        border-color: #f00;//@TODO: Red variable color
+      }
+    }
+  }
+
+  // Sever Modal (On Click)
+  &__modal {
+    //@TODO: Create modal mixin, extend modal styling
+  }
+
+}

@@ -1,4 +1,4 @@
 extends layouts/layout-react
 
 block content
-    #index-root
+    #index-root(data-servers=`${JSON.stringify(servers)}`)

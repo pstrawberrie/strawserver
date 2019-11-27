@@ -13,13 +13,17 @@ exports.index = async (req, res) => {
   })
   .then(response => response)
   .catch(err => null);
+
   console.log(mumble);
 
   res.render('index', {
     title: 'Status',
-    servers: {
-      mumble
-    }
+    servers: [
+      {
+        name: 'mumble',
+        data: mumble
+      }
+    ]
   });
 
 }

@@ -3,10 +3,13 @@
  */
 
 import React from 'react';
+import Servers from '../Servers/Servers';
 import './Nav.scss';
 
 export default class Nav extends React.Component {
   render() {
+    console.log('in nav', this.props);
+
     return(
       <nav className="nav">
         <ul className="nav__main">
@@ -17,11 +20,7 @@ export default class Nav extends React.Component {
             <a className="nav__main_link" href="#testlink2">Test Link 2</a>
           </li>*/}
         </ul>
-        <div className="nav__user">
-          {/* <button className="nav__user_trigger">
-            User
-          </button> */}
-        </div>
+        <Servers isInNav={true} servers={this.props.servers} />
       </nav>
     );
   }
