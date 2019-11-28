@@ -18,17 +18,17 @@ export default class Servers extends React.Component {
     const { isInNav, isModal, servers } = this.props;
 
     function renderServersQuickview() {
-      servers.map((server, index) => {
+      return servers.map((server, index) => {
         const isUp = server.data ? true : false;
         const baseClassName = 'servers__nav-quickview_icon';
         const statusClassName = isUp ? `${baseClassName} up` : `${baseClassName} down`;
-        console.log(statusClassName);
 
         return (
           <div className={statusClassName} key={index}>
-            asdf
+            <span className="servers__nav-quickview_icon_image" style={{backgroundImage: `url('/assets/images/${server.name}.svg')`}}></span>
+            <span className="servers__nav-quickview_icon_title">{server.name}</span>
           </div>
-        );
+        )
       })
     }
 

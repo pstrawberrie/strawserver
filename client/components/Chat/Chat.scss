@@ -1,0 +1,32 @@
+/**
+ * Chat
+ */
+
+.chat {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+  &__trigger {
+    width: 32px;
+    height: 32px;
+    background: transparent url('/images/mumble.svg') no-repeat center;
+
+    &[aria-expanded="false"] {
+      //@TODO different icon
+    }
+  }
+
+  &__inner {
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+
+    &[aria-hidden="false"] {
+      transform: scale(1);
+    }
+  }
+
+  &__window {
+
+  }
+}

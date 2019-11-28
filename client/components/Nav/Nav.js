@@ -8,7 +8,6 @@ import './Nav.scss';
 
 export default class Nav extends React.Component {
   render() {
-    console.log('in nav', this.props);
 
     return(
       <nav className="nav">
