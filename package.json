@@ -8,8 +8,8 @@
   "scripts": {
     "start": "cross-env concurrently -n Server,Client \"npm run dev:server\" \"npm run client:watch\"",
     "dev:server": "cross-env nodemon -e js,pug server.js --colors",
-    "client:watch": "cross-env parcel watch ./client/client.js -d ./public/dist",
-    "client:build": "cross-env parcel build ./client/client.js -d ./public/dist",
+    "client:watch": "cross-env parcel watch ./client/client.js -d ./public/dist --public-url ./",
+    "client:build": "cross-env parcel build ./client/client.js -d ./public/dist --public-url ./",
     "production:server": "cross-env node server.js",
     "production": "npm run client:build && npm run production:server"
   },
@@ -55,7 +55,6 @@
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-structurize": "^1.1.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "sass": "^1.23.7",

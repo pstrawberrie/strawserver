@@ -2,15 +2,24 @@
  * Chat
  */
 
+@import '../../global/scss/util';
+
 .chat {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0;
 
   &__trigger {
-    width: 32px;
-    height: 32px;
-    background: transparent url('/images/mumble.svg') no-repeat center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+    width: 48px;
+    height: 48px;
+    background: transparent url('/images/chat.svg') no-repeat center;
+    background-size: 48px;
+    border: 0;
+    cursor: pointer;
 
     &[aria-expanded="false"] {
       //@TODO different icon
@@ -18,8 +27,24 @@
   }
 
   &__inner {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 400px;
+    height: 650px;
+    overflow-x: hidden;
+    overflow-y: auto;
     transform: scale(0);
+    transform-origin: bottom right;
     transition: transform 0.2s ease-in-out;
+    background: $c-gray-darker;
+
+    &.name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     &[aria-hidden="false"] {
       transform: scale(1);
@@ -28,5 +53,35 @@
 
   &__window {
 
+  }
+
+  &__input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+      &_message,
+      &_name {
+        width: 100%;
+        font-size: 1.25rem;
+        padding: 0.35rem 0.5rem;
+      }
+
+      &--name {
+        position: relative;
+        width: 90%;
+      }
+
+      &_name-label {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      &_name {
+
+      }
   }
 }
