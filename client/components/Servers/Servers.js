@@ -23,12 +23,14 @@ export default class Servers extends React.Component {
         const baseClassName = 'servers__nav-quickview_icon';
         const statusClassName = isUp ? `${baseClassName} up` : `${baseClassName} down`;
 
-        return (
-          <div className={statusClassName} key={index}>
-            <span className="servers__nav-quickview_icon_image" style={{backgroundImage: `url('/assets/images/${server.name}.svg')`}}></span>
-            <span className="servers__nav-quickview_icon_title">{server.name}</span>
-          </div>
-        )
+        if(server.name !== 'status') {
+          return (
+            <div className={statusClassName} key={index}>
+              <span className="servers__nav-quickview_icon_image" style={{backgroundImage: `url('/assets/images/${server.name}.svg')`}}></span>
+              <span className="servers__nav-quickview_icon_title">{server.name}</span>
+            </div>
+          )
+        }
       })
     }
 

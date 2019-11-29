@@ -14,8 +14,15 @@
     &_icon {
       position: relative;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       border: 2px solid transparent;
+      margin-right: 0.6rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       &_image {
         width: 24px;
@@ -23,7 +30,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-        margin-right: 0.4rem;
+        margin-bottom: 0.25rem;
         border-radius: 14px;
         border: 2px solid transparent;
 
@@ -38,8 +45,8 @@
       }
 
       &_title {
+        font-weight: 100;
         font-size: 0.75rem;
-        text-transform: capitalize;
 
         .servers__nav-quickview_icon.up & {
           color: $c-green-status;

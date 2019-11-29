@@ -40,13 +40,13 @@ export default class IndexPage extends React.Component {
    * Get Initial Page Data
    */
   getInitialState() {
-    const rootEle = document.getElementById('index-root');
+    //const rootEle = document.getElementById('index-root');
 
     // Get Servers Data
-    let serversData = rootEle.getAttribute('data-servers');
-    serversData = serversData ? JSON.parse(serversData) : [];
+    // let serversData = rootEle.getAttribute('data-servers');
+    // serversData = serversData ? JSON.parse(serversData) : [];
 
-    this.setState({servers: serversData});
+    // this.setState({servers: serversData});
   }
 
   /**
@@ -61,6 +61,7 @@ export default class IndexPage extends React.Component {
     });
     socket.on('servers', (data) => {
       console.log('Got serverStatus socket from server:', data);
+      this.setState({servers: data});
     });
   }
 
