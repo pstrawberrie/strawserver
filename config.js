@@ -6,11 +6,15 @@ module.exports = {
   config: {
     development: {
       isProd: false,
+      serverIp: '192.168.1.217',
       webPort: 3000,
+      swgQueryPort: 44455,
     },
     production: {
       isProd: true,
+      serverIp: '192.168.1.217',
       webPort: 3000,
+      swgQueryPort: 44455,
     },
   },
 

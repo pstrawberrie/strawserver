@@ -5,6 +5,7 @@ const config = require('./config').getConfig(process.env.NODE_ENV);
 const path = require('path');
 const chalk = require('chalk');
 const express = require('express');
+const Net = require('net');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server, {serveClient: false});
@@ -48,7 +49,7 @@ if (app.get('env') === 'development') {
 
 app.use(errorHandlers.productionErrors);
 
-// Start Server
+// Start Web Server
 server.listen(config.webPort, () => {
     console.log(chalk.yellow(`+++ Web Server Started on localhost:${config.webPort} +++`));
 
@@ -63,3 +64,27 @@ server.listen(config.webPort, () => {
     });
 
 });
+
+// Start SWG TCP Listener
+// @TODO: Move this service into a cron file along with mumble/gamedig
+const swgClient = new Net.Socket();
+swgClient.connect({
+  host: config.serverIp,
+  port: config.swgQueryPort,
+  fd: 99999,
+}, () => console.log(chalk.yellow('-> SWG TCP Connected')));
+
+swgClient.on('data', (chunk) => {
+  console.log(chalk.yellow(`Data received from SWG TCP: ${chunk.toString()}.`));
+
+  // Request an end to the connection after the data has been received.
+  swgClient.end();
+});
+
+swgClient.on('end', (closed) => {
+  console.log('SWG TCP connection closed (end)', closed);
+});
+
+swgClient.on('error', (err) => {
+  console.log(chalk.red('GOT AN ERROR FROM SWG TCP:', err));
+})
