@@ -42,7 +42,7 @@
     "express": "^4.17.1",
     "gamedig": "^2.0.20",
     "helmet": "^3.21.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
     "pug": "^2.0.4",
     "socket.io": "^2.3.0",
