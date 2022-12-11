@@ -39,7 +39,7 @@
     "chalk": "^3.0.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "gamedig": "^2.0.20",
     "helmet": "^3.21.2",
     "moment": "^2.24.0",
